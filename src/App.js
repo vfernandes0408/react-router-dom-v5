@@ -14,9 +14,9 @@ function App() {
         <li><Link to="/logged">Logged</Link></li>
       </ul>
       <Switch>
-        <Route match exact path='/' component={Home} />
-        <Route match path='/about' component={About} />
-        <Route match path='/logged' component={Logged} />
+        <Route exact path='/' component={Home} />
+        <Route path='/about' component={About} />
+        <Route path='/logged' component={Logged} />
       </Switch>
     </div>
   );
