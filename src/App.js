@@ -1,17 +1,30 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route, Link } from "react-router-dom";
+import { createHashHistory } from "history";
 
-import Navbar from "./components/Navbar";
+import About from './pages/About'
+import Home from './pages/Home'
+import Profile from './pages/Profile'
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Profile from "./pages/Profile";
+const history = createHashHistory();
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <div className="container mt-2" style={{ marginTop: 40 }}>
+    <Router history={history}>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/profile">Dashboard</Link>
+          </li>
+        </ul>
+
+        <hr />
         <Switch>
           <Route exact path="/">
             <Home />
@@ -19,12 +32,12 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/profile/:name">
+          <Route path="/profile">
             <Profile />
           </Route>
         </Switch>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 

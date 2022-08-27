@@ -1,5 +1,6 @@
 import React from "react";
 
+console.log('PAGE HOME')
 const Home = () => (
   <div>
     <h1 className="title is-1">This is the Home Page</h1>

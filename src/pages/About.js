@@ -1,5 +1,6 @@
 import React from "react";
 
+console.log('PAGE ABOUT')
 const About = () => (
   <div>
     <h1 className="title is-1">This is the About Page</h1>

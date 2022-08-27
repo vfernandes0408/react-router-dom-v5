@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import withAuth from "../components/withAuth";
 
+console.log('PAGE PROFILE')
 const Profile = () => {
   const { name } = useParams();
   return (
