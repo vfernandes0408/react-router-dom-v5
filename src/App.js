@@ -1,43 +1,24 @@
 import React from "react";
-import { Router, Switch, Route, Link } from "react-router-dom";
-import { createHashHistory } from "history";
+import { Route, Link, Switch } from 'react-router-dom';
 
 import About from './pages/About'
 import Home from './pages/Home'
-import Profile from './pages/Profile'
-
-const history = createHashHistory();
+import Logged from './pages/Logged'
 
 function App() {
   return (
-    <Router history={history}>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/profile">Dashboard</Link>
-          </li>
-        </ul>
-
-        <hr />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <div className="App">
+      <ul className="App-header">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About Us</Link></li>
+        <li><Link to="/logged">Logged</Link></li>
+      </ul>
+      <Switch>
+        <Route match exact path='/' component={Home} />
+        <Route match path='/about' component={About} />
+        <Route match path='/logged' component={Logged} />
+      </Switch>
+    </div>
   );
 }
 
