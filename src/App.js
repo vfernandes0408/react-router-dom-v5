@@ -15,7 +15,7 @@ function App() {
       </ul>
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route path='/about' component={About} />
+        <Route  path='/about' component={About} />
         <Route path='/logged' component={Logged} />
       </Switch>
     </div>
